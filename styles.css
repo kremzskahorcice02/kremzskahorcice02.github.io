@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: "Eras ITC", "Eras Bold ITC",  sans-serif ;
+    background-color: black;
+    min-height: 1500px;
+    color: rgba(255, 255, 255, 0.646);
+}
+
+section {
+    background-image: url(images/stars.jpg);
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #000000, transparent);
+    z-index: 10000;
+    
+}
+
+section:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: black;
+    z-index: 10000;
+    mix-blend-mode: color;
+    
+}
+
+section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+.stars {
+    position: absolute;
+    top: 100px;
+    left: 0;
+}
+
+.venus {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mountain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(50%)
+}
+
+.road {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    z-index: 2;
+    filter: brightness(50%)
+}
+
+.lod {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 500px;
+    z-index: 1;
+}
+
+#text {
+    position: relative;
+    color: #ffffffcf;
+    font-size: 10rem;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+div {
+    margin: 50px auto;
+}
+
+div h2 {
+    text-align: center;
+}
