@@ -1,15 +1,16 @@
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 
 body {
     font-family: "Eras ITC", "Eras Bold ITC",  sans-serif ;
     background-color: black;
     min-height: 1500px;
     color: rgba(255, 255, 255, 0.646);
+    overflow-x: hidden;
 }
 
 section {
@@ -29,8 +30,8 @@ section:before {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #000000, transparent);
+    height: 200px;
+    
     z-index: 10000;
     
 }
@@ -100,10 +101,250 @@ section img {
     z-index: 1;
 }
 
-div {
-    margin: 50px auto;
+.navDiv {
+    height: 150px;
+    position: relative;
 }
 
-div h2 {
+
+.navMenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .navMenu a {
+    color: #f6f4e6;
     text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    width: 100px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:hover, .navMenu a:active {
+    color: #ff5f1f84;
+  }
+  
+  .navMenu .dot {
+    width: 6px;
+    height: 6px;
+    background: #ff5f1f84;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:nth-child(1):hover ~ .dot {
+    -webkit-transform: translateX(50px);
+    transform: translateX(50px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(2):hover ~ .dot {
+    -webkit-transform: translateX(150px);
+    transform: translateX(150px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(3):hover ~ .dot {
+    -webkit-transform: translateX(255px);
+    transform: translateX(255px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+  
+  .navMenu a:nth-child(4):hover ~ .dot {
+    -webkit-transform: translateX(360px);
+    transform: translateX(360px);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    opacity: 1;
+  }
+
+  .fade {
+    background-color: transparent;
+    opacity: 0;
+  }
+
+.about {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 50px 50px 200px 50px;
 }
+
+.border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 500px;    
+    z-index: 0;
+    border-radius: 1px;
+  background-color: transparent;
+  box-shadow: inset 0px 2px 40px #d97d5973, 
+              inset 0px 4px 40px #ff5f1f34, 
+              inset 0px 8px 40px #ff5f1f69;
+}
+
+.about-photo {
+    z-index: 2;
+    padding: 40px;
+    height: 500px;
+    border-radius: 1px;
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.levitate {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    letter-spacing: 1px;
+    height: fit-content;
+    margin: 0 120px 0 0;
+    text-align: left;
+    z-index: 2;
+	transform: translatey(0px);
+	animation: float 4s ease-in-out infinite;
+}
+
+.lightning {
+    position: absolute;
+    top: -30px;
+    right: -70px;
+    width: 500px;
+    height: auto;
+    padding: 0;
+    transform: rotate(210deg);
+    overflow: hidden;
+}
+
+#myBtn {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1rem;
+    align-items: center;
+    appearance: none;
+    border-radius: 50%;
+    border-width: 0;
+    cursor: pointer;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+  }
+  
+  #myBtn:focus {
+    background-color: #ebebeb;
+  }
+  
+  #myBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 1px 4px 0 #ff5f1f73, 
+              0px 2px 20px 0 #ff5f1f73, 
+              0px 4px 12px 0 #ff5f1f73, 
+              0px 8px 20px 0 #ff5f1f73;
+  }
+  
+  #myBtn:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+#myBtn img {
+    width: 15px;
+    height: auto;
+}
+
+  @media only screen and (max-width: 360px) {
+
+    section {
+        background-image: none;
+    }
+      
+    
+    .stars {
+        height: 500px;
+    }
+    
+    .venus {
+        transform: translateY(-50px);
+    }
+    
+    .mountain {
+        transform: translateY(-60px);
+    }
+    
+    .road {
+        transform: translateY(-40px);
+    }
+    
+    .lod {
+        height: 300px;
+        width: 200px;
+    }
+    
+    #text {
+        font-size: 3.5rem;
+        transform: translateY(-40px);
+    }
+
+    .navMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 100px 0 0 0;
+    }
+
+    .navMenu a {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+
+
+    .navMenu .dot {
+        display: none;
+      }
+  }
